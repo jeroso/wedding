@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Nanum+Gothic&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gaegu&family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
         <style>
             html,body {
                 background-color: #f7f2ef;
@@ -23,22 +25,30 @@
                 font-size: 40px;
                 text-align: center;
                 line-height: 15px;
+                margin-top: 85px;
             }
             .invitation{
                 font-size:35px;
                 text-align: center;
-                height: 650px;
+                height: 910px;
                 background-color: #f6e6d9;
                 margin-top:80px;
             }
             .gallery {
                 font-size: 40px;
                 text-align: center;
+                height: 720px;
+                background-color: #f7f2ef;
+            }
+            .maps{
+                font-size: 32px;
+                text-align: center;
             }
             .phone{
                 font-size: 40px;
                 text-align: center;
                 height: 120px;
+                margin-top: 150px;
             }
             .icon{
                 text-align: center;
@@ -83,19 +93,115 @@
             .modify_close-button:hover {
                 background-color: darkgray;
             }
+
+
+
+        /*    캐러셀
+        */
+            .btn{
+                position: absolute;
+                color: #C32a92;
+                font-size: 60px;
+                z-index: 2;
+            }
+            .btn2{
+                position: absolute;
+                z-index: 2;
+            }
+            .bottom1,
+            .bottom2{position: relative;}
+            .btn-left{
+                width: 30px;
+                position: relative;
+                cursor: pointer;
+                left: 10px;
+                top: 200px;
+            }
+            .btn-right{
+                width: 30px;
+                position: relative;
+                cursor: pointer;
+                left: 855px;
+                top: 200px;
+            }
+            .wrap{position: relative;}
+            .carousel-box{
+                z-index: 0;
+                opacity: 0;
+                transition: all .5s ease-in-out;
+                transform: scale(0.95);
+                position:  absolute;
+            }
+            .main{
+                display: block;
+                width: 100%;
+            }
+            .contents-box{
+                display: block;
+                /*width: 490px;*/
+                /*margin: 30px auto 0 auto;*/
+                /*padding-top: 150px;*/
+            }
+            .contents-img{
+                width: 800px;
+            }
+            .btn{
+                /*top : 203%;*/
+                /*left: 19%;*/
+                font-size: 2em;
+            }
+            .active{
+                opacity: 1;
+                z-index: 1;
+                transform: none;
+                /*border: 10px solid rgba(127,47,214,.2);*/
+                /*border: 10px solid rgba(127,47,214,.2);*/
+                left: 8%;
+            }
+            .bottom1{
+                width: 60px;
+                cursor: pointer;
+                top: 25px;
+                left: 380px;
+            }
+            .bottom2{
+                width: 60px;
+                cursor: pointer;
+                top: 320px;
+                left: -45px;
+            }
+            .generic-wrap{
+                position: absolute;
+                width: 490px;
+                text-align: center;
+                z-index: 999;
+            }
+            .generic{
+                position: relative;
+                margin: 0 auto;
+                top:600px;
+                left: 230px;
+            }
+            .box{
+                display: inline-block;
+                margin: 0 1px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid gray;
+                border-radius: 100%;
+            }
+            .now{background: black;}
+
         </style>
 
     </head>
     <body>
       <div class="header">
-          <!-- <p style="text-decoration: underline; font-size: 50px;">GETTING MARRIED</p>
-          <p style="font-size: 120px; font-weight: bold;"> 20.12.12</p>
-          송영우 ♡ 고은혜 -->
-          <img src="C:\Users\boeun\Desktop\wedding\song\images\header.png" alt="">
+          <img src="./images/header.png" alt="">
       </div>
 
       <div class="main-images">
-        <img src="C:\Users\boeun\Desktop\wedding\song\images\main.jpg" alt="" style="width: 100%;">
+        <img src="./images/main.jpg" alt="" style="width: 100%;">
             <div class="main-text">
                 <p>2020. 12. 12. 토요일 오후 3시 30분</p>
                 <p>아이윌 웨딩홀 </p>
@@ -103,28 +209,91 @@
         </div>
 
         <div class="invitation">
-            <p style="font-size: 50px; padding-top:30px;">INVITATION</p>
+            <p style="font-size: 60px; padding-top:30px;">INVITATION</p>
             <p>12년이라는 시간동안 </p>
             <p>행복한 순간에는 가장 큰 기쁨이었고,</p>    
             <p>힘든 순간에는 가장 큰 위로였던 저희 두 사람이</p>    
             <p>행복한 가정으로 첫 걸음을 내딛습니다.</p>   
             <p>부디 오셔서 저희의 앞날을 축복해 주시면</p>     
             <p>더 없는 기쁨으로 간직 하겠습니다.</p>
-        </div>
-        <div class="gallery">
-            <p>갤러리</p>
-            <p>ㅡ</p>
-            <img src="C:\Users\boeun\Desktop\wedding\song\images\calendar.png" style="width:100%">
+            <br>
+            <p> 송춘종 전영희 의 아들 영우</p>
+            <p style="margin-top: -28px;"> 고광남 장순희 의 딸 은혜</p>
         </div>
 
+      <div style="font-size: 40px; text-align: center;">
+          <p>갤러리</p>
+          <p>ㅡ</p>
+      </div>
+
+        <div class="gallery">
+
+            <div class="main">
+                <div class="contents-box">
+                    <div class="btn">
+                        <a><img src="./images/bt-arrow-left.png" class="btn-left"></a>
+                        <a><img src="./images/bt-arrow-right.png" class="btn-right"></a>
+                    </div>
+
+                    <div class="wrap">
+                        <div class="carousel-box active">
+                            <img class="contents-img" src="./images/1.jpg" alt="1">
+                        </div>
+                        <div class="carousel-box">
+                            <img class="contents-img" src="./images/2.jpg" alt="1">
+                        </div>
+                        <div class="carousel-box">
+                            <img class="contents-img" src="./images/3.jpg" alt="1">
+                        </div>
+                        <div class="carousel-box">
+                            <img class="contents-img" src="./images/4.jpg" alt="1">
+                        </div>
+                        <div class="carousel-box">
+                            <img class="contents-img" src="./images/5.jpg" alt="1">
+                        </div>
+                    </div>
+                    <div class="generic-wrap">
+                        <div class="generic">
+                            <div class="box now"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="calendar">
+             <img src="./images/calendar.png" style="width:100%">
+        </div>
+      <div style="font-size: 40px; text-align: center;">
+          <p>오시는길</p>
+          <p>ㅡ</p>
+      </div>
+      <div class="maps">
+            <div id="map" style="margin-left: 40px; width:90%;height:700px;"></div>
+          <p>서울 서초구 반포대로 138, 1층 (서초동 1719-4)<br>Tel. 02-532-9033</p>
+          <p style="margin-top: 100px;">지하철 이용시</p>
+          <p style="font-size: 20px;">2호선 서초역 8번 출구 앞</p>
+          <p style="margin-top: 100px;">버스 이용시</p>
+          <p style="font-size: 20px;">마을버스 : 서초02, 서초11, 서초13, 서초21 <br>
+             간선버스 : 405, 541, 740 <br>
+              지선버스 : 5413 / 시외버스 : 700 <br>
+              직행버스 : 3000, 3003, 3100, 3101, 3200, 6501 <br>
+              광역버스 : M6405, M6410, 9100, 9200, 9201, 9300 <br>
+              주차장 : 아이윌웨딩홀 건물 주차장
+          </p>
+      </div>
       <div class="phone">
           <div class="man" style="display: inline-block; text-decoration: underline; margin-right: 100px; width:285px;">
               신랑측에 전화하기
-              <a href="sms:01044810660"><img src="C:\Users\boeun\Desktop\wedding\song\images\phone.png" style="width:50px; "></a>
+              <a href="sms:01044810660"><img src="./images/phone.png" style="width:50px; "></a>
           </div>
           <div class="girl" style="display: inline-block;text-decoration: underline; width:285px;">
               신부측에 전화하기
-              <img src="C:\Users\boeun\Desktop\wedding\song\images\phone.png" style="width:50px; ">
+              <img src="./images/phone.png" style="width:50px; ">
           </div>
       </div>
       <div class="icon">
@@ -135,28 +304,116 @@
 
           </div>
       </div>
-      <!-- 팝업 될 레이어 -->
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=64f9bc4ff208ce92e86ff9b1d6d97010"></script>
+      <script type="text/javascript">
+          var active = "active";
+          var now = "now";
+          var firstBtn = document.querySelector(".box:first-child");
+          var firstBox = document.querySelector(".carousel-box:first-child");
+          var lastBtn = document.querySelector(".box:last-child");
+          var lastBox = document.querySelector(".carousel-box:last-child");
+          var leftBtn = document.querySelector(".btn-left");
+          var rightBtn = document.querySelector(".btn-right");
 
-      <div class="modifyModal">
-          <div class="modify_modal-content">
-              <span class="modify_close-button">&times</span>
-              <h1 class="title">서비스 테이블 수정</h1>
-              <br/>
-              <input type="text" name="service" placeholder="박물관 명" id ="service2" required="required">
-              <input type="text" name="location" id="location2" placeholder="위치">
-              <input type="text" name="thumbnailUrl" id="thumbnailUrl2" placeholder="박물관썸네일">
-              <input type="text" name="startScene" id="startScene2" placeholder="시작 씬">
-              <input type="text" name="generalInfo" id="generalInfo2" placeholder="기본정보">
-              <input type="text" name="tourInfo" id="tourInfo2" placeholder="투어안내">
-              <input type="text" name="facilitiesInfo" id="facilitiesInfo2" placeholder="편의시설">
-              <div class="modal-footer">
-                  <div class="submit">
-                  </div>
-                  <input type="button" id="cancel2" onclick="modify_cancel_button()" value="닫기">
-                  <!--			<input type="submit" id="submit" onclick="modify_button()" value="수정하기">-->
-              </div>
-          </div>
-      </div>
+          var moveLeft = function(){
+              var current = document.querySelector(`.${active}`);
+              var currentBtn = document.querySelector(`.${now}`);
+              if(current){
+                  current.classList.remove(active);
+                  var prev = current.previousElementSibling;
+                  if(prev){
+                      prev.classList.add(active);
+                  }else{
+                      lastBox.classList.add(active);
+                  }
+              }else{
+                  firstBox.classList.add(active);
+              }
+              if(currentBtn){
+                  currentBtn.classList.remove(now);
+                  var prevBtn = currentBtn.previousElementSibling;
+                  if(prevBtn){
+                      prevBtn.classList.add(now);
+                  }else{
+                      lastBtn.classList.add(now);
+                  }
+              }else{
+                  firstBtn.classList.add(now);
+              }
+          };
+          var moveRight = function(){
+              var current = document.querySelector(`.${active}`);
+              var currentBtn = document.querySelector(`.${now}`);
+              if(current){
+                  current.classList.remove(active);
+                  var next = current.nextElementSibling;
+                  if(next){
+                      next.classList.add(active);
+                  }else{
+                      firstBox.classList.add(active);
+                  }
+              }else{
+                  firstBox.classList.add(active);
+              }
+              if(currentBtn){
+                  currentBtn.classList.remove(now);
+                  var nextBtn = currentBtn.nextElementSibling;
+                  if(nextBtn){
+                      nextBtn.classList.add(now);
+                  }else{
+                      firstBtn.classList.add(now);
+                  }
+              }else{
+                  firstBtn.classList.add(now);
+              }
+          }
 
+          leftBtn.addEventListener("click", moveLeft);
+          rightBtn.addEventListener("click", moveRight);
+
+          function init(){
+              firstBox.classList.add(active);
+          }
+          init();
+
+          //앱 지도
+          // var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          //     mapOption = {
+          //         center: new kakao.maps.LatLng(37.492404, 127.008094), // 지도의 중심좌표
+          //         level: 3 // 지도의 확대 레벨
+          //     };
+          //
+          // var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+          //
+          // // 마커가 표시될 위치입니다
+          // var markerPosition  = new kakao.maps.LatLng(37.492404, 127.008094);
+          //
+          // // 마커를 생성합니다
+          // var marker = new kakao.maps.Marker({
+          //     position: markerPosition
+          // });
+          //
+          // // 마커가 지도 위에 표시되도록 설정합니다
+          // marker.setMap(map);
+          //
+          // // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+          // // marker.setMap(null);
+          var markers = [
+              {
+                  position: new kakao.maps.LatLng(37.492404, 127.008094),
+                  text: '아이윌 웨딩홀' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다
+              }
+          ];
+
+          var staticMapContainer  = document.getElementById('map'), // 이미지 지도를 표시할 div
+              staticMapOption = {
+                  center: new kakao.maps.LatLng(37.492404, 127.008094), // 이미지 지도의 중심좌표
+                  level: 2, // 이미지 지도의 확대 레벨
+                  marker: markers // 이미지 지도에 표시할 마커
+              };
+
+          // 이미지 지도를 생성합니다
+          var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+      </script>
     </body>
 </html>
