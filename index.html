@@ -31,9 +31,57 @@
                 background-color: #f6e6d9;
                 margin-top:80px;
             }
-            .gallery{
+            .gallery {
                 font-size: 40px;
                 text-align: center;
+            }
+            .phone{
+                font-size: 40px;
+                text-align: center;
+                height: 120px;
+            }
+            .icon{
+                text-align: center;
+            }
+
+
+
+
+            /* 전화번호 모달 */
+            .modifyModal {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(1.1);
+                transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+            }
+            .modify_modal-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 1rem 1.5rem;
+                width: 500px;
+                height: 600px;
+                border-radius: 0.5rem;
+            }
+            .modify_close-button {
+                float: right;
+                width: 1.5rem;
+                line-height: 1.5rem;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 0.25rem;
+                background-color: lightgray;
+            }
+            .modify_close-button:hover {
+                background-color: darkgray;
             }
         </style>
 
@@ -68,5 +116,47 @@
             <p>ㅡ</p>
             <img src="C:\Users\boeun\Desktop\wedding\song\images\calendar.png" style="width:100%">
         </div>
+
+      <div class="phone">
+          <div class="man" style="display: inline-block; text-decoration: underline; margin-right: 100px; width:285px;">
+              신랑측에 전화하기
+              <a href="sms:01044810660"><img src="C:\Users\boeun\Desktop\wedding\song\images\phone.png" style="width:50px; "></a>
+          </div>
+          <div class="girl" style="display: inline-block;text-decoration: underline; width:285px;">
+              신부측에 전화하기
+              <img src="C:\Users\boeun\Desktop\wedding\song\images\phone.png" style="width:50px; ">
+          </div>
+      </div>
+      <div class="icon">
+          <div style="display: inline-block; margin-right: 100px;">
+
+          </div>
+          <div  style="display: inline-block;">
+
+          </div>
+      </div>
+      <!-- 팝업 될 레이어 -->
+
+      <div class="modifyModal">
+          <div class="modify_modal-content">
+              <span class="modify_close-button">&times</span>
+              <h1 class="title">서비스 테이블 수정</h1>
+              <br/>
+              <input type="text" name="service" placeholder="박물관 명" id ="service2" required="required">
+              <input type="text" name="location" id="location2" placeholder="위치">
+              <input type="text" name="thumbnailUrl" id="thumbnailUrl2" placeholder="박물관썸네일">
+              <input type="text" name="startScene" id="startScene2" placeholder="시작 씬">
+              <input type="text" name="generalInfo" id="generalInfo2" placeholder="기본정보">
+              <input type="text" name="tourInfo" id="tourInfo2" placeholder="투어안내">
+              <input type="text" name="facilitiesInfo" id="facilitiesInfo2" placeholder="편의시설">
+              <div class="modal-footer">
+                  <div class="submit">
+                  </div>
+                  <input type="button" id="cancel2" onclick="modify_cancel_button()" value="닫기">
+                  <!--			<input type="submit" id="submit" onclick="modify_button()" value="수정하기">-->
+              </div>
+          </div>
+      </div>
+
     </body>
 </html>
