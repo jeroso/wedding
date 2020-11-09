@@ -13,6 +13,7 @@
                 width: 100%;
                 height: 100%;
                 font-family: 'Do Hyeon', sans-serif;
+                margin: 0;
             }
             .header{
                 font-size:35px;
@@ -192,6 +193,15 @@
             }
             .now{background: black;}
 
+            .map-button{
+                position: relative;
+                z-index: 2;
+                width: 90%;
+                background-color: orange;
+                top: -47px;
+                height: 40px;
+                margin-left: -3px;
+            }
         </style>
 
     </head>
@@ -273,7 +283,11 @@
           <p>ㅡ</p>
       </div>
       <div class="maps">
-            <div id="map" style="margin-left: 40px; width:90%;height:700px;"></div>
+            <div class="map-wrap">
+                <div id="map" style="margin-left: 40px; width:90%;height:700px;position: relative;z-index: 1;"></div>
+                <!-- <a href="https://map.kakao.com/link/map/37.492404,127.008094"><button class="map-button"style="position: relative;z-index: 2;">카카오 맵 바로가기</button></a> -->
+                <a href="https://map.kakao.com/link/search/아이윌웨딩홀"><button class="map-button"style="position: relative;z-index: 2;">카카오 맵 바로가기</button></a>
+            </div>       
           <p>서울 서초구 반포대로 138, 1층 (서초동 1719-4)<br>Tel. 02-532-9033</p>
           <p style="margin-top: 100px;">지하철 이용시</p>
           <p style="font-size: 20px;">2호선 서초역 8번 출구 앞</p>
