@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
         <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Nanum+Gothic&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gaegu&family=Nanum+Gothic&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
+         	<!-- Link Swiper's CSS -->
+     <link rel="stylesheet" href="./css/swiper.css">
+
+
         <style>
             html,body {
                 background-color: #f7f2ef;
@@ -17,7 +22,7 @@
             }
             .header{
                 font-size:35px;
-                text-align: center;
+                text-align: center;margin-top:85px;
             }
             .main-images{
                 width: 100%;
@@ -202,13 +207,44 @@
                 height: 40px;
                 margin-left: -3px;
             }
+
+            /* 슬라이드 */
+            .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+        margin-bottom:100px;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 500px !important;
+        background-size: cover !important;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
         </style>
 
     </head>
     <body>
       <div class="header">
-          <img src="./images/header.png" alt="">
-      </div>
+          <!-- <img src="./images/header.png" alt=""> -->
+          <p>영우</p>
+           <p style="margin-bottom: 55px;">ㅡ</p>
+          <p style="margin-bottom: 70px;">은혜</p>  
+        </div>
 
       <div class="main-images">
         <img src="./images/main.jpg" alt="" style="width: 100%;">
@@ -239,7 +275,7 @@
         <div class="gallery">
 
             <div class="main">
-                <div class="contents-box">
+                <!-- <div class="contents-box">
                     <div class="btn">
                         <a><img src="./images/bt-arrow-left.png" class="btn-left"></a>
                         <a><img src="./images/bt-arrow-right.png" class="btn-right"></a>
@@ -271,8 +307,35 @@
                             <div class="box"></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
+
+                 <!-- Swiper -->
+               <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background:url(./images/1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/3.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/4.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/5.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/6.jpg)"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+                    <!-- <div class="swiper-slide" style="background-image:url(./images/1.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/2.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/3.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/4.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/5.jpg)"></div> -->
+                    <!-- <div class="swiper-slide" style="background-image:url(./images/nature-6.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/nature-7.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/nature-8.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/nature-9.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(./images/nature-10.jpg)"></div> -->
+                    <!-- </div>
+                    <!-- Add Pagination -->
+                  
 
         </div>
         <div class="calendar">
@@ -318,77 +381,12 @@
 
           </div>
       </div>
+     <!-- Swiper JS -->
+    <script src="./js/swiper.min.js"></script>
+
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=64f9bc4ff208ce92e86ff9b1d6d97010"></script>
       <script type="text/javascript">
-          var active = "active";
-          var now = "now";
-          var firstBtn = document.querySelector(".box:first-child");
-          var firstBox = document.querySelector(".carousel-box:first-child");
-          var lastBtn = document.querySelector(".box:last-child");
-          var lastBox = document.querySelector(".carousel-box:last-child");
-          var leftBtn = document.querySelector(".btn-left");
-          var rightBtn = document.querySelector(".btn-right");
-
-          var moveLeft = function(){
-              var current = document.querySelector(`.${active}`);
-              var currentBtn = document.querySelector(`.${now}`);
-              if(current){
-                  current.classList.remove(active);
-                  var prev = current.previousElementSibling;
-                  if(prev){
-                      prev.classList.add(active);
-                  }else{
-                      lastBox.classList.add(active);
-                  }
-              }else{
-                  firstBox.classList.add(active);
-              }
-              if(currentBtn){
-                  currentBtn.classList.remove(now);
-                  var prevBtn = currentBtn.previousElementSibling;
-                  if(prevBtn){
-                      prevBtn.classList.add(now);
-                  }else{
-                      lastBtn.classList.add(now);
-                  }
-              }else{
-                  firstBtn.classList.add(now);
-              }
-          };
-          var moveRight = function(){
-              var current = document.querySelector(`.${active}`);
-              var currentBtn = document.querySelector(`.${now}`);
-              if(current){
-                  current.classList.remove(active);
-                  var next = current.nextElementSibling;
-                  if(next){
-                      next.classList.add(active);
-                  }else{
-                      firstBox.classList.add(active);
-                  }
-              }else{
-                  firstBox.classList.add(active);
-              }
-              if(currentBtn){
-                  currentBtn.classList.remove(now);
-                  var nextBtn = currentBtn.nextElementSibling;
-                  if(nextBtn){
-                      nextBtn.classList.add(now);
-                  }else{
-                      firstBtn.classList.add(now);
-                  }
-              }else{
-                  firstBtn.classList.add(now);
-              }
-          }
-
-          leftBtn.addEventListener("click", moveLeft);
-          rightBtn.addEventListener("click", moveRight);
-
-          function init(){
-              firstBox.classList.add(active);
-          }
-          init();
+        
 
           //앱 지도
           // var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -428,6 +426,16 @@
 
           // 이미지 지도를 생성합니다
           var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+
+
+        //   <!-- Initialize Swiper -->
+        var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 30,
+        freeMode: true
+    });
       </script>
     </body>
 </html>
